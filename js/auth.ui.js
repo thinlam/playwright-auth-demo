@@ -17,4 +17,9 @@ if (loginForm) {
     if (ok) window.location.href = "index.html";
     else alert("Login FAIL");
   });
+  document.getElementById('logout-btn')?.addEventListener('click', () => {
+  logoutUser();
+  window.location.href = 'login.html';
+});
+
 }

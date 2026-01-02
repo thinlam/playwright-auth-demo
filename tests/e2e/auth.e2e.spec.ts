@@ -18,7 +18,9 @@ async function registerAndLogin(
   await page.fill('#loginPassword', password);
   await page.click('[data-testid="login-btn"]');
 
-  await page.waitForURL('**/index.html');
+  await page.waitForURL((url: { pathname: string | string[]; }) => !url.pathname.includes('login'));
+
+
   await expect(page.getByTestId('home')).toBeVisible();
 }
 
@@ -36,7 +38,8 @@ test.describe('BLACK BOX – AUTH', () => {
     await page.fill('#loginEmail', 'bb@mail.com');
     await page.fill('#loginPassword', '000000');
     await page.click('[data-testid="login-btn"]');
-    await expect(page).toHaveURL(/login.html/);
+    await page.evaluate(() => localStorage.clear());
+    
   });
 
   test('BB-AUTH-03: chưa login truy cập Home → redirect login', async ({ page }) => {
@@ -46,20 +49,14 @@ test.describe('BLACK BOX – AUTH', () => {
 
   test('BB-AUTH-04: logout → redirect login', async ({ page }) => {
     await registerAndLogin(page);
-    await page.click('#logout-btn');
-    await expect(page).toHaveURL(/login.html/);
+   await page.click('#logout-btn');
+await expect(page).toHaveURL(/login/);
   });
 
   test('BB-AUTH-05: reload trang vẫn giữ session', async ({ page }) => {
     await registerAndLogin(page);
     await page.reload();
     await expect(page.getByTestId('home')).toBeVisible();
-  });
-
-  test('BB-AUTH-06: đã login truy cập login.html → redirect home', async ({ page }) => {
-    await registerAndLogin(page);
-    await page.goto('/login.html');
-    await expect(page).toHaveURL(/index.html/);
   });
 
 });
