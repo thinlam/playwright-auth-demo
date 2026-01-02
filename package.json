@@ -1,0 +1,13 @@
+{
+  "name": "playwright-auth-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+  "test": "playwright test",
+  "test:unit": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+},
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "jest": "^29.7.0"
+  }
+}

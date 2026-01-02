@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Giỏ hàng</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+  <h2>Mini Shop</h2>
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <button id="logout-btn">Đăng xuất</button>
+  </nav>
+</header>
+
+<h1>Giỏ hàng</h1>
+
+<!-- 🔴 BẮT BUỘC PHẢI CÓ -->
+<div id="cart-list"></div>
+
+<button data-testid="checkout-btn">Đặt hàng</button>
+
+<script type="module" src="js/guard.js"></script>
+<script type="module" src="js/cart.js"></script>
+
+</body>
+</html>

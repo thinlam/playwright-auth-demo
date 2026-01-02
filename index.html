@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Shop - Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <h2>Mini Shop</h2>
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="cart.html">Giỏ hàng</a>
+    <button id="logout-btn" class="secondary">Đăng xuất</button>
+  </nav>
+</header>
+
+<!-- MAIN -->
+<div class="container">
+  <!-- dùng cho Playwright -->
+  <h1 data-testid="home">Chào mừng đến Mini Shop</h1>
+  <p>Mua sắm nhanh – Demo kiểm thử tự động</p>
+
+  <h2>Sản phẩm nổi bật</h2>
+
+  <div class="products">
+    <div class="product-card" data-testid="product-1">
+      <img src="https://picsum.photos/300/200?random=1" />
+      <h3>Áo thun nam</h3>
+      <p class="price">199.000đ</p>
+      <button type="button" data-testid="add-1">Thêm vào giỏ</button>
+
+    </div>
+
+    <div class="product-card" data-testid="product-2">
+      <img src="https://picsum.photos/300/200?random=2" />
+      <h3>Giày sneaker</h3>
+      <p class="price">499.000đ</p>
+      <button type="button" data-testid="add-2">Thêm vào giỏ</button>
+    </div>
+
+    <div class="product-card" data-testid="product-3">
+      <img src="https://picsum.photos/300/200?random=3" />
+      <h3>Balo du lịch</h3>
+      <p class="price">299.000đ</p>
+      <button type="button" data-testid="add-3">Thêm vào giỏ</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/guard.js"></script>
+<script type="module" src="js/shop.js"></script>
+
+</body>
+</html>
